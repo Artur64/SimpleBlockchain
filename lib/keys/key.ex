@@ -6,8 +6,8 @@ defmodule Blockchain.Keys.Key do
     :crypto.strong_rand_bytes(@default_entropy_size)
   end
 
-  @spec get_public_key(binary()) :: binary()
-  def get_public_key(private_key) do
+  @spec create_public_key(binary()) :: binary()
+  def create_public_key(private_key) do
     {pub_key, _priv_key} = :crypto.generate_key(:ecdh, :secp256k1, private_key)
     pub_key
   end
