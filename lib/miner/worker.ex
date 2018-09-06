@@ -70,7 +70,7 @@ defmodule Blockchain.Miner.Worker do
   end
 
   def handle_call(:stop, _from, %{miner: :stop} = state) do
-    {:reply, {:error, "Already stopped"}, state}
+    {:reply, {:error, "Already stopped!"}, state}
   end
 
   def handle_call(:check, _from, state) do
